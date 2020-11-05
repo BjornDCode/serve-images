@@ -19,7 +19,7 @@ RUN apt-get update \
        php7.3-xml php7.3-zip php7.3-bcmath php7.3-soap \
        php7.3-intl php7.3-readline php7.3-xdebug \
        php-msgpack php-igbinary \
-    && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
+    && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer --version=1.10.17 \
     && mkdir /run/php \
     && apt-get -y autoremove \
     && apt-get clean \
