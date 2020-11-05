@@ -26,8 +26,8 @@ RUN apt-get update \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
-ADD docker/app/default /etc/nginx/sites-available/default
-ADD docker/app/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD docker/app/php-fpm.conf /etc/php/7.4/fpm/php-fpm.conf
+ADD default /etc/nginx/sites-available/default
+ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD php-fpm.conf /etc/php/7.4/fpm/php-fpm.conf
 
 CMD ["supervisord"]
